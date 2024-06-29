@@ -116,6 +116,9 @@ export const tips = [
 const reversedTips = shuffle(tips).slice(0).reverse();
 
 function Tips() {
+  // customRemove
+  return <></>;
+  // end customRemove
   const { t } = useLocale();
 
   const [list, setList] = useState<typeof tips>(() => {

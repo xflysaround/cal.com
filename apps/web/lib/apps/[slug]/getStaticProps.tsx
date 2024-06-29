@@ -8,7 +8,6 @@ import { z } from "zod";
 import { getAppWithMetadata } from "@calcom/app-store/_appRegistry";
 import { getAppAssetFullPath } from "@calcom/app-store/getAppAssetFullPath";
 import { IS_PRODUCTION } from "@calcom/lib/constants";
-import prisma from "@calcom/prisma";
 
 const md = new MarkdownIt("default", { html: true, breaks: true });
 
@@ -36,9 +35,22 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
     slug: ctx.params?.slug,
   });
 
-  const appFromDb = await prisma.app.findUnique({
+  // customRemove
+  /*const appFromDb = await prisma.app.findUnique({
     where: { slug: ctx.params.slug.toLowerCase() },
-  });
+  });*/
+  const appFromDb = {
+    enabled: false,
+  };
+  return {
+    props: {
+      isAppDisabled: true as const,
+      data: {
+        ...appMeta,
+      },
+    },
+  };
+  // end customRemove
 
   const isAppAvailableInFileSystem = appMeta;
   const isAppDisabled = isAppAvailableInFileSystem && (!appFromDb || !appFromDb.enabled);
