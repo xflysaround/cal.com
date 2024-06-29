@@ -9,13 +9,15 @@ const calFont = fetch(new URL("../../../../public/fonts/cal.ttf", import.meta.ur
   res.arrayBuffer()
 );
 
-const interFont = fetch(new URL("../../../../public/fonts/Inter-Regular.ttf", import.meta.url)).then((res) =>
+// customRemove
+/*const interFont = fetch(new URL("../../../../public/fonts/Inter-Regular.ttf", import.meta.url)).then((res) =>
   res.arrayBuffer()
 );
 
 const interFontMedium = fetch(new URL("../../../../public/fonts/Inter-Medium.ttf", import.meta.url)).then(
   (res) => res.arrayBuffer()
-);
+);*/
+// end customRemove
 
 export const config = {
   runtime: "edge",
@@ -47,17 +49,14 @@ export default async function handler(req: NextApiRequest) {
   const { searchParams } = new URL(`${req.url}`);
   const imageType = searchParams.get("type");
 
-  const [calFontData, interFontData, interFontMediumData] = await Promise.all([
-    calFont,
-    interFont,
-    interFontMedium,
-  ]);
+  // customRemove
+  const [calFontData] = await Promise.all([calFont]);
   const ogConfig = {
     width: 1200,
     height: 630,
     fonts: [
-      { name: "inter", data: interFontData, weight: 400 },
-      { name: "inter", data: interFontMediumData, weight: 500 },
+      // customRemove { name: "inter", data: interFontData, weight: 400 },
+      // customRemove { name: "inter", data: interFontMediumData, weight: 500 },
       { name: "cal", data: calFontData, weight: 400 },
       { name: "cal", data: calFontData, weight: 600 },
     ] as SatoriOptions["fonts"],
