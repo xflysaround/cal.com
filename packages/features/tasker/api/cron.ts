@@ -9,5 +9,6 @@ export async function GET(request: NextRequest) {
     return new Response("Unauthorized", { status: 401 });
   }
   await tasker.processQueue();
+  await tasker.cleanup(); // customRevove
   return NextResponse.json({ success: true });
 }
