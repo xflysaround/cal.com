@@ -60,6 +60,7 @@ export function Header({
         {isMyLink && !isEmbed ? (
           <Tooltip content={t("troubleshooter_tooltip")} side="bottom">
             <Button
+              className="customRemove"
               color="primary"
               target="_blank"
               href={`${WEBAPP_URL}/availability/troubleshoot?eventType=${eventSlug}`}>

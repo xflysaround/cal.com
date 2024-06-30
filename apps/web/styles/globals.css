@@ -483,3 +483,9 @@ select:focus {
 .intercom-lightweight-app  {
   @apply z-40 !important;
 }
+
+/* customRemove */
+a[href="/more"], .customRemove {
+  display: none !important;
+}
+/* end customRemove */

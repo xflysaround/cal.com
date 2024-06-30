@@ -265,6 +265,9 @@ export const KBarContent = () => {
 };
 
 export const KBarTrigger = () => {
+  // customRemove
+  return <></>;
+  // end customRemove
   const { query } = useKBar();
   return query ? (
     <>

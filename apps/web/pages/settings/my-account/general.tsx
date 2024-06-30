@@ -23,12 +23,10 @@ import {
   SkeletonButton,
   SkeletonContainer,
   SkeletonText,
-  TimezoneSelect,
-  SettingsToggle,
+  TimezoneSelect, // customRemove SettingsToggle,
 } from "@calcom/ui";
 
 import PageWrapper from "@components/PageWrapper";
-import TravelScheduleModal from "@components/settings/TravelScheduleModal";
 
 export type FormValues = {
   locale: {
@@ -333,6 +331,8 @@ const GeneralView = ({ localeProp, user, travelSchedules }: GeneralViewProps) =>
         </SectionBottomActions>
       </Form>
 
+      {/* customRemove
+      
       <SettingsToggle
         toggleSwitchAtTheEnd={true}
         title={t("dynamic_booking")}
@@ -376,7 +376,7 @@ const GeneralView = ({ localeProp, user, travelSchedules }: GeneralViewProps) =>
         onOpenChange={() => setIsTZScheduleOpen(false)}
         setValue={formMethods.setValue}
         existingSchedules={formMethods.getValues("travelSchedules") ?? []}
-      />
+      /> end customRemove */}
     </div>
   );
 };

@@ -205,7 +205,9 @@ export default function AvailabilityPage() {
   const toggleGroupOptions = [{ value: "mine", label: t("my_availability") }];
 
   if (!isOrgAndPrivate || isOrgAdminOrOwner) {
+    /* customRemove
     toggleGroupOptions.push({ value: "team", label: t("team_availability") });
+    End customRemove */
   }
 
   return (

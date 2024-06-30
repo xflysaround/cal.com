@@ -40,11 +40,8 @@ import VerifyEmailBanner, {
 import classNames from "@calcom/lib/classNames";
 import {
   APP_NAME,
-  DESKTOP_APP_LINK,
   ENABLE_PROFILE_SWITCHER,
   IS_VISUAL_REGRESSION_TESTING,
-  JOIN_DISCORD,
-  ROADMAP,
   TOP_BANNER_HEIGHT,
   WEBAPP_URL,
 } from "@calcom/lib/constants";
@@ -82,12 +79,13 @@ import {
   useCalcomTheme,
   type IconName,
 } from "@calcom/ui";
-import { Discord } from "@calcom/ui/components/icon/Discord";
+// customRemove import { Discord } from "@calcom/ui/components/icon/Discord";
 import { useGetUserAttributes } from "@calcom/web/components/settings/platform/hooks/useGetUserAttributes";
 
 import { useOrgBranding } from "../ee/organizations/context/provider";
 import FreshChatProvider from "../ee/support/lib/freshchat/FreshChatProvider";
-import { TeamInviteBadge } from "./TeamInviteBadge";
+
+// customRemove import { TeamInviteBadge } from "./TeamInviteBadge";
 
 // need to import without ssr to prevent hydration errors
 const Tips = dynamic(() => import("@calcom/features/tips").then((mod) => mod.Tips), {
@@ -505,7 +503,7 @@ function UserDropdown({ small }: UserDropdownProps) {
                   </>
                 )}
 
-                <DropdownMenuItem>
+                {/* customRemove <DropdownMenuItem>
                   <DropdownItem
                     CustomStartIcon={<Discord className="text-default h-4 w-4" />}
                     target="_blank"
@@ -540,7 +538,9 @@ function UserDropdown({ small }: UserDropdownProps) {
                   </DropdownMenuItem>
                 )}
 
-                <DropdownMenuSeparator />
+                <DropdownMenuSeparator /> 
+                end customRemove
+                */}
 
                 <DropdownMenuItem>
                   <DropdownItem
@@ -603,13 +603,13 @@ const navigation: NavigationItemType[] = [
     href: "/availability",
     icon: "clock",
   },
-  {
+  /* customRemove {
     name: "teams",
     href: "/teams",
     icon: "users",
     onlyDesktop: true,
     badge: <TeamInviteBadge />,
-  },
+  },*/
   {
     name: "apps",
     href: "/apps",
@@ -645,7 +645,7 @@ const navigation: NavigationItemType[] = [
     href: "/more",
     icon: "ellipsis",
   },
-  {
+  /* customRemove{
     name: "Routing Forms",
     href: "/apps/routing-forms/forms",
     icon: "file-text",
@@ -660,7 +660,7 @@ const navigation: NavigationItemType[] = [
     name: "insights",
     href: "/insights",
     icon: "bar-chart",
-  },
+  },*/
 ];
 
 const platformNavigation: NavigationItemType[] = [
@@ -783,7 +783,7 @@ const NavigationItem: React.FC<{
           {item.icon && (
             <Icon
               name={item.icon}
-              className="todesktop:!text-blue-500 mr-2 h-4 w-4 flex-shrink-0 rtl:ml-2 md:ltr:mx-auto lg:ltr:mr-2 [&[aria-current='page']]:text-inherit"
+              className="todesktop:!text-blue-500 mr-2 h-4 w-4 flex-shrink-0 md:ltr:mx-auto lg:ltr:mr-2 rtl:ml-2 [&[aria-current='page']]:text-inherit"
               aria-hidden="true"
               aria-current={current ? "page" : undefined}
             />
@@ -1099,11 +1099,11 @@ export function ShellMain(props: LayoutProps) {
               className={classNames(props.large && "py-8", "flex w-full max-w-full items-center truncate")}>
               {props.HeadingLeftIcon && <div className="ltr:mr-4">{props.HeadingLeftIcon}</div>}
               <div
-                className={classNames("w-full truncate ltr:mr-4 rtl:ml-4 md:block", props.headerClassName)}>
+                className={classNames("w-full truncate md:block ltr:mr-4 rtl:ml-4", props.headerClassName)}>
                 {props.heading && (
                   <h3
                     className={classNames(
-                      "font-cal max-w-28 sm:max-w-72 md:max-w-80 text-emphasis inline truncate text-lg font-semibold tracking-wide sm:text-xl md:block xl:max-w-full",
+                      "font-cal text-emphasis inline max-w-28 truncate text-lg font-semibold tracking-wide sm:max-w-72 sm:text-xl md:block md:max-w-80 xl:max-w-full",
                       props.smallHeading ? "text-base" : "text-xl",
                       props.hideHeadingOnMobile && "hidden"
                     )}>
@@ -1122,7 +1122,7 @@ export function ShellMain(props: LayoutProps) {
                   className={classNames(
                     props.backPath
                       ? "relative"
-                      : "pwa:bottom-[max(7rem,_calc(5rem_+_env(safe-area-inset-bottom)))] fixed bottom-20 z-40 ltr:right-4 rtl:left-4 md:z-auto md:ltr:right-0 md:rtl:left-0",
+                      : "pwa:bottom-[max(7rem,_calc(5rem_+_env(safe-area-inset-bottom)))] fixed bottom-20 z-40 md:z-auto ltr:right-4 md:ltr:right-0 rtl:left-4 md:rtl:left-0",
                     "flex-shrink-0 [-webkit-app-region:no-drag] md:relative md:bottom-auto md:right-auto"
                   )}>
                   {isLocaleReady && props.CTA}
@@ -1262,7 +1262,7 @@ function ProfileDropdown() {
           onInteractOutside={() => {
             setMenuOpen(false);
           }}
-          className="min-w-56 hariom group overflow-hidden rounded-md">
+          className="hariom group min-w-56 overflow-hidden rounded-md">
           <DropdownMenuItem className="p-3 uppercase">
             <span>Switch to</span>
           </DropdownMenuItem>
