@@ -1,36 +1,28 @@
 openapi: 3.0.0
 info:
-  title: Calendso API
-  description: The open source Calendly alternative.
+  title: MyBookingProfile
+  description: MyBookingProfile is a free platform for Creators to let people book when it works for you.
   contact:
     name: Support
-    email: support@cal.com
+    email: support@mg.mybookingprofile.com
   license:
     name: MIT License
     url: "https://opensource.org/licenses/MIT"
   version: 1.0.0
-  termsOfService: "https://cal.com/terms"
+  termsOfService: "https://www.mybookingprofile.com/terms"
 server:
-  url: "http://localhost:{port}"
-  description: Local Development Server
+  url: "https://app.mybookingprofile.com"
+  description: MyBookingProfile is a free platform for Creators to let people book when it works for you.
   variables:
     port:
       default: "3000"
 tags:
-  - name: Authentication
-    description: "Auth routes, powered by Next-Auth.js"
-    externalDocs:
-      url: "http://next-auth.js.org/"
-  - name: Availability
-    description: Checking and setting user availability
   - name: Booking
     description: Create and manage bookings
   - name: Integrations
     description: Manage integrations
   - name: User
     description: Manage the user's profile and settings
-  - name: Teams
-    description: Manage teams
 paths:
   /api/auth/signin:
     get:
@@ -722,7 +714,7 @@ paths:
         required: true
         description: The team which you wish to list members of
 servers:
-  - url: "https://app.cal.com"
+  - url: "https://app.mybookingprofile.com"
     description: Production
 components:
   securitySchemes: {}

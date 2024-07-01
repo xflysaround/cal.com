@@ -23,7 +23,6 @@ import {
   URL_PROTOCOL_REGEX,
   IS_CALCOM,
   WEBAPP_URL,
-  WEBSITE_URL,
   CLOUDFLARE_SITE_ID,
 } from "@calcom/lib/constants";
 import { fetchUsername } from "@calcom/lib/fetchUsername";
@@ -544,14 +543,14 @@ export default function Signup({
                       <Link
                         className="text-emphasis hover:underline"
                         key="terms"
-                        href={`${WEBSITE_URL}/terms`}
+                        href="https://www.mybookingprofile.com/terms"
                         target="_blank">
                         Terms
                       </Link>,
                       <Link
                         className="text-emphasis hover:underline"
                         key="privacy"
-                        href={`${WEBSITE_URL}/privacy`}
+                        href="https://www.mybookingprofile.com/privacy"
                         target="_blank">
                         Privacy Policy.
                       </Link>,
