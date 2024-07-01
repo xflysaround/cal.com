@@ -50,7 +50,8 @@ const locationFormSchema = z.array(
       .string()
       .refine((val) => isValidPhoneNumber(val))
       .optional(),
-    locationLink: z.string().url().optional(), // URL validates as new URL() - which requires HTTPS:// In the input field
+    // customRemove locationLink: z.string().url().optional(), // URL validates as new URL() - which requires HTTPS:// In the input field
+    locationLink: z.string().optional(),
   })
 );
 

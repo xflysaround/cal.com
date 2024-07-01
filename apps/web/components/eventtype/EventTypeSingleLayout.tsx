@@ -96,7 +96,7 @@ function getNavigation({
       icon: "sliders-vertical",
       info: `event_advanced_tab_description`,
     },
-    {
+    /* customRemove {
       name: "apps",
       href: `/event-types/${id}?tabName=apps`,
       icon: "grid-3x3",
@@ -108,7 +108,7 @@ function getNavigation({
       href: `/event-types/${id}?tabName=workflows`,
       icon: "zap",
       info: `${enabledWorkflowsNumber} ${t("active")}`,
-    },
+    },*/
   ] satisfies VerticalTabItemProps[];
 }
 
@@ -222,12 +222,14 @@ function EventTypeSingleLayout({
     });
 
     if (!requirePayment) {
+      /*
+      customRemove
       navigation.splice(3, 0, {
         name: "recurring",
         href: `/event-types/${formMethods.getValues("id")}?tabName=recurring`,
         icon: "repeat",
         info: `recurring_event_tab_description`,
-      });
+      });*/
     }
     navigation.splice(1, 0, {
       name: "availability",
@@ -258,7 +260,8 @@ function EventTypeSingleLayout({
       });
     }
     const showWebhooks = !(isManagedEventType || isChildrenManagedEventType);
-    if (showWebhooks) {
+    if (showWebhooks && true === false) {
+      // customRemove
       if (team) {
         navigation.push({
           name: "instant_tab_title",

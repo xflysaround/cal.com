@@ -9,11 +9,10 @@ import {
   getOrgDomainConfigFromHostname,
   subdomainSuffix,
 } from "@calcom/features/ee/organizations/lib/orgDomains";
-import { DOCS_URL, IS_CALCOM, JOIN_DISCORD, WEBSITE_URL } from "@calcom/lib/constants";
+import { DOCS_URL, IS_CALCOM, WEBSITE_URL } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { HeadSeo } from "@calcom/ui";
 import { Icon } from "@calcom/ui";
-import { Discord } from "@calcom/ui/components/icon/Discord";
 
 import PageWrapper from "@components/PageWrapper";
 
@@ -202,7 +201,7 @@ export default function Custom404() {
                 </li>
               </ul>
             )}
-            <h2 className="text-subtle text-sm font-semibold uppercase tracking-wide">
+            {/* customRemove <h2 className="text-subtle text-sm font-semibold uppercase tracking-wide">
               {t("popular_pages")}
             </h2>
             <ul role="list" className="border-subtle divide-subtle divide-y">
@@ -256,7 +255,7 @@ export default function Custom404() {
                   </div>
                 </a>
               </li>
-            </ul>
+                </ul> */}
             <div className="mt-8">
               <Link href={WEBSITE_URL} className="hover:text-subtle text-emphasis text-base font-medium">
                 {t("or_go_back_home")}

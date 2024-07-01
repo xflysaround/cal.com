@@ -137,6 +137,13 @@ export async function getLocationGroupedOptions(
       })),
     };
 
+    // customRemove
+    if (category === "conferencing") {
+      //console.log(l);
+      continue;
+    }
+    // end customRemove
+
     locations.push(tmp);
   }
 

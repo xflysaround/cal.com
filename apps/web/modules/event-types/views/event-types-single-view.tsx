@@ -332,7 +332,8 @@ const EventTypePage = (props: EventTypeSetupProps) => {
                 .object({
                   type: z.string(),
                   address: z.string().optional(),
-                  link: z.string().url().optional(),
+                  // customRemove link: z.string().url().optional(),
+                  link: z.string().optional(),
                   phone: z
                     .string()
                     .refine((val) => isValidPhoneNumber(val))
@@ -375,7 +376,8 @@ const EventTypePage = (props: EventTypeSetupProps) => {
                       return;
                     }
 
-                    const valid = z.string().url().optional().safeParse(link).success;
+                    // customRemove const valid = z.string().url().optional().safeParse(link).success;
+                    const valid = z.string().optional();
 
                     if (!valid) {
                       ctx.addIssue({

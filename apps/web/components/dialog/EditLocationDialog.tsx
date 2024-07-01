@@ -126,7 +126,8 @@ export const EditLocationDialog = (props: ISetLocationDialog) => {
           return;
         }
 
-        const valid = z.string().url().optional().safeParse(val).success;
+        // customRemove const valid = z.string().url().optional().safeParse(val).success;
+        const valid = z.string().optional();
         if (!valid) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
