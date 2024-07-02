@@ -309,7 +309,7 @@ export const EventSetupTab = (
                   {!(shouldLockDisableProps("locations").disabled && isChildrenManagedEventType) && (
                     <button
                       data-testid={`delete-locations.${index}.type`}
-                      className="min-h-9 block h-9 px-2"
+                      className="block h-9 min-h-9 px-2"
                       type="button"
                       onClick={() => remove(index)}
                       aria-label={t("remove")}>
@@ -453,7 +453,7 @@ export const EventSetupTab = (
             </li>
           )}
         </ul>
-        <p className="text-default mt-2 text-sm">
+        <p className="text-default customRemove mt-2 text-sm">
           <Trans i18nKey="cant_find_the_right_video_app_visit_our_app_store">
             Can&apos;t find the right video app? Visit our
             <Link className="cursor-pointer text-blue-500 underline" href="/apps/categories/video">

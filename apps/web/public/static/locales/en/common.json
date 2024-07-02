@@ -813,7 +813,7 @@
   "at_least_characters_one": "Please enter at least one character",
   "at_least_characters_other": "Please enter at least {{count}} characters",
   "team_logo": "Team Logo",
-  "add_location": "Add a location",
+  "add_location": "Add another location",
   "attendees": "Attendees",
   "add_attendees": "Add attendees",
   "show_advanced_settings": "Show advanced settings",
