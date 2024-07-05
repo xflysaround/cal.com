@@ -39,12 +39,12 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
   /*const appFromDb = await prisma.app.findUnique({
     where: { slug: ctx.params.slug.toLowerCase() },
   });*/
-  let appFromDb = {
+  const appFromDb = {
     enabled: false,
     keys: null,
     dirName: "",
   };
-  if (ctx.params?.slug == "apple-calendar") {
+  /*if (ctx.params?.slug == "apple-calendar") {
     appFromDb = {
       enabled: true,
       keys: null,
@@ -68,7 +68,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext) => {
       keys: null,
       dirName: "office365calendar",
     };
-  }
+  }*/
   const isAppDisabledCustom = !appFromDb.enabled;
   return {
     props: {
