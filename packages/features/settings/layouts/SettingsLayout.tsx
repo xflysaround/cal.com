@@ -26,8 +26,8 @@ const tabs: VerticalTabItemProps[] = [
     children: [
       { name: "profile", href: "/settings/my-account/profile" },
       { name: "general", href: "/settings/my-account/general" },
-      { name: "calendars", href: "/settings/my-account/calendars" },
-      { name: "conferencing", href: "/settings/my-account/conferencing" },
+      // customRemove { name: "calendars", href: "/settings/my-account/calendars" },
+      // customRemove { name: "conferencing", href: "/settings/my-account/conferencing" },
       { name: "appearance", href: "/settings/my-account/appearance" },
       { name: "out_of_office", href: "/settings/my-account/out-of-office" },
       // TODO

@@ -609,7 +609,7 @@ const navigation: NavigationItemType[] = [
     icon: "users",
     onlyDesktop: true,
     badge: <TeamInviteBadge />,
-  },*/
+  },
   {
     name: "apps",
     href: "/apps",
@@ -639,7 +639,7 @@ const navigation: NavigationItemType[] = [
           (path?.startsWith("/v2/apps/installed/") ?? false),
       },
     ],
-  },
+  },*/
   {
     name: MORE_SEPARATOR_NAME,
     href: "/more",

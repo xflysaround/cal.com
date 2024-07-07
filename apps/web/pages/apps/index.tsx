@@ -9,19 +9,14 @@ import { useLocale } from "@calcom/lib/hooks/useLocale";
 import type { inferSSRProps } from "@calcom/types/inferSSRProps";
 import type { HorizontalTabItemProps } from "@calcom/ui";
 import {
-  AllApps,
-  AppStoreCategories,
-  HorizontalTabs,
-  TextField,
-  PopularAppsSlider,
-  RecentAppsSlider,
+  TextField, // customRemove PopularAppsSlider,
+  // customRemove RecentAppsSlider,
 } from "@calcom/ui";
 import { Icon } from "@calcom/ui";
 
 import { getServerSideProps } from "@lib/apps/getServerSideProps";
 
 import PageWrapper from "@components/PageWrapper";
-import AppsLayout from "@components/apps/layouts/AppsLayout";
 
 const tabs: HorizontalTabItemProps[] = [
   {
@@ -61,11 +56,13 @@ export default function Apps({
   appStore,
   userAdminTeams,
 }: Omit<inferSSRProps<typeof getServerSideProps>, "trpcState">) {
+  // customRemove
+  return <></>;
   const { t } = useLocale();
   const [searchText, setSearchText] = useState<string | undefined>(undefined);
 
-  return (
-    <AppsLayout
+  return {
+    /*customRemove <AppsLayout
       isPublic
       heading={t("app_store")}
       subtitle={t("app_store_description")}
@@ -96,8 +93,8 @@ export default function Apps({
           userAdminTeams={userAdminTeams}
         />
       </div>
-    </AppsLayout>
-  );
+    </AppsLayout> */
+  };
 }
 
 export { getServerSideProps };

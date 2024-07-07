@@ -12,6 +12,8 @@ const ShellHeading = () => {
 };
 
 export default function WrappedApp(props: AppPageProps) {
+  // customRemove
+  return <></>;
   return (
     <Shell smallHeading isPublic hideHeadingOnMobile heading={<ShellHeading />} backPath="/apps" withoutSeo>
       <HeadSeo
