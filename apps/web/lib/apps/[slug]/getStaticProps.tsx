@@ -29,6 +29,7 @@ export const sourceSchema = z.object({
 });
 
 export const getStaticProps = async (ctx: GetStaticPropsContext) => {
+  return { notFound: true } as const;
   if (typeof ctx.params?.slug !== "string") return { notFound: true } as const;
 
   const appMeta = await getAppWithMetadata({
