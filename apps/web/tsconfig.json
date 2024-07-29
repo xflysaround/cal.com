@@ -15,7 +15,7 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "experimentalDecorators": true
   },
   "include": [
