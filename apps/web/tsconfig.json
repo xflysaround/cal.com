@@ -19,7 +19,9 @@
     "experimentalDecorators": true,
     "strict": false,
     "noImplicitAny": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     /* Find a way to not require this - App files don't belong here. */
